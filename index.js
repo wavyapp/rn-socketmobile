@@ -19,6 +19,13 @@ type ParamsType = {
 
 type StatusType = 'connected' | 'disconnected';
 
+const safe = (cb) => {
+  if (!ReactNativeSocketMobile) {
+    return () => Promise.reject('UNDEFINED_NATIVE_LIBRARY');
+  }
+  return cb;
+};
+
 const start = (params: ParamsType) => {
   const { bundleId, developerId, appKey } = params;
   return ReactNativeSocketMobile.start(bundleId, developerId, appKey);
@@ -45,10 +52,10 @@ const clearAllListeners = () => {
 };
 
 export default {
-  clearAllListeners,
-  start,
-  stop,
-  setDataListener,
-  setDeviceStatusListener,
-  updateStatusFromDevices,
+  clearAllListeners: safe(clearAllListeners),
+  start: safe(start),
+  stop: safe(stop),
+  setDataListener: safe(setDataListener),
+  setDeviceStatusListener: safe(setDeviceStatusListener),
+  updateStatusFromDevices: safe(updateStatusFromDevices),
 };

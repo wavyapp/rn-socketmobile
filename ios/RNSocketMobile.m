@@ -91,7 +91,7 @@ RCT_EXPORT_METHOD(updateStatusFromDevices: (RCTPromiseResolveBlock)resolve rejec
     NSArray* devices = [capture getDevicesList];
     NSString* newStatus = @"";
     if (devices.count == 0 ){
-        newStatus = @"Waiting for a scanner...";
+        newStatus = @"NO_DEVICES";
     } else {
         for (SKTCaptureHelperDevice* device in devices) {
             if( newStatus.length > 0) {

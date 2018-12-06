@@ -1,6 +1,6 @@
 
 {
-  "name": "react-native-socket-mobile",
+  "name": "@wavyapp/react-native-socket-mobile",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

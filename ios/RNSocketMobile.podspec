@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "author" => "author@domain.cn" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/wavyapp/rn-socketmobile/RNSocketMobile.git", :tag => "master" }
+  s.source       = { :git => "https://github.com/wavyapp/rn-socketmobile/RNSocketMobile.git", :tag => "v0.1" }
   s.source_files  = "RNSocketMobile/**/*.{h,m}"
   s.requires_arc = true
 
